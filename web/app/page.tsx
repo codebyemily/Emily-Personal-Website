@@ -1,72 +1,61 @@
 import Image from "next/image";
-import Demo from '@/app/component/LiquidGlass'
-import BackgroundPage from '@/app/component/Background'
-import myBackgroundImage from '@/public/dune.jpeg'; // Optional: for static import
+import { Button } from "@/components/ui/button"
+import { ExperienceScroll } from "@/components/ui/ExperienceScroll";
+import { Card, CardGrid } from "@/components/ui/card"
+import styles from "./BentoGrid.module.css";
+import { Projects } from "@/components/ui/ProjectsList";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import  Link  from 'next/link'
+import { Courier_Prime } from 'next/font/google';
+
+const courier = Courier_Prime({
+  subsets: ['latin'], // required
+  weight: '400',      // optional, regular weight
+});
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <Image
-        src={myBackgroundImage}
-        alt="Cover Image"
-        fill
-        className="object-cover object-top"
-        priority
-      />
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <h1 className="text-3xl font-bold underline">
-          Hello world!
-        </h1>
-        <Demo></Demo>
 
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+  return (
+    <div className="flex min-h-screen w-full p-8 bg-background font-sans  dark:bg-black">
+     
+      <main className="flex min-h-screen flex-col dark:bg-black sm:items-start">
+<div className="flex flex-row gap-5 h-full w-full max-h-3xl border">         
+      <div className=" text-card-foreground flex flex-col gap-6 border-r p-6 w-64 flex-1">
+        <h2 className={courier.className}>Projects</h2>
+        <ExperienceScroll></ExperienceScroll>
+      </div>
+          <div className={` ${styles.gridContainer} flex-3 pr-6 py-6`}>
+
+          <CardGrid area="box1">
+            <h3>Hi, I’m Emily Thach.</h3>I am a third-year Software Engineering student at San José State University. I enjoy full stack development and learning new technologies.
+            Through my coursework, clubs, and personal projects, I’ve developed a problem-solving mindset and a love for learning new technologies!
+            </CardGrid>
+          <CardGrid area="box2">Github daily commits</CardGrid>
+          <CardGrid area="box3">Download resume v</CardGrid>
+          <CardGrid area="box4">Picture of me</CardGrid>
+          <CardGrid area="box5"><ExperienceScroll></ExperienceScroll></CardGrid>
+          <CardGrid area="box6" variant="bg-primary flex flex-col text-center text-white"><h1>Contact Form</h1></CardGrid>
+          <CardGrid area="box7">
+            <ul className="list-disc list-inside">
+              <Link href="mailto:emily.thach01@sjsu.edu" className="underline"><h3>Email</h3></Link>
+              <Link href="https://github.com/codebyemily" className="underline"><h3>Linkedin</h3></Link>
+              <Link href="https://github.com/codebyemily" className="underline"><h3>Discord</h3></Link>
+              <Link href="https://github.com/codebyemily" className="underline"><h3>Github</h3></Link>
+            </ul>
+
+            </CardGrid>
+          <CardGrid area="box8">
+            <p className="border-b pb-2">Click on a project and it will pop up here!</p>
+            
+            </CardGrid>
+          <CardGrid area="box9">Organizations, Extracurriculars, events participated, sports, Clubs, hackathons, volunteering
+Leadership roles
+What you actually did impact</CardGrid>
+
+        </div>  
+        </div>      
       </main>
     </div>
+    
   );
 }
