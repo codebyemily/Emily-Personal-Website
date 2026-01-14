@@ -199,26 +199,36 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    font-family: var(--font-geist-mono);  
+
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-geist-mono);  
+
   }
   h1 {
     @apply text-4xl font-bold tracking-tight;
+    font-family: var(--font-courier-prime);
+
   }
   h2 {
     @apply text-3xl font-semibold;
+    font-family: var(--font-courier-prime);
+
   }
   h3 {
     @apply text-2xl font-semibold;
+    font-family: var(--font-courier-prime);
   }
 }
 
+/* globals.css */
 .courier-prime-regular {
+  @apply font-normal;
   font-family: "Courier Prime", monospace;
-  font-weight: 400;
-  font-style: normal;
 }
+
 
 .courier-prime-bold {
   font-family: "Courier Prime", monospace;
