@@ -1,45 +1,38 @@
 [
   {
-    "title": "StressBall",
-    "description": "Won \"Best MCP\" and \"Most Complex\" at Cal Hacks 12.0!",
-    "longDescription": "Built an AI-powered voice agent that autonomously calls businesses, navigates phone trees, and provides conversation summaries. Engineered serverless MCP backend on Cloudflare Workers with LiveKit Cloud for real-time voice processing and Telnyx integration for automated outbound calling to live phone numbers, handling concurrent voice sessions. Designed iMessage-based interface using Poke API, enabling users to text requests and receive AI-generated call transcripts stored in Cloudflare KV for persistent conversation history.",
-    "stack": ["Cloudflare", "LiveKit Cloud", "Telnyx", "Model Context Protocol", "Poke", "JavaScript"],
-    "img": "hi"
+    "title": "SE Intern",
+    "organization": "Software and Computer Engineering Society at SJSU",
+    "description": "Added new features to SCE Club's development environment.",
+    "dates": {
+      "start": "Jan 2025",
+      "end": "Feb 2026"
+    }
   },
   {
-    "title": "RCC Site",
-    "description": "Developed a Chrome extension powered by the Gemini API to automatically generate and send context-aware email replies.",
-    "longDescription": "Implemented web scraping and DOM parsing to extract email content directly from Gmail’s web interface for real-time processing. Integrated Gmail and Google People APIs for authentication, message retrieval, and user data access to personalize email responses.",
-    "stack": ["React", "Node.js", "Next.js", "Google Gemini API", "Gmail API"],
-    "img": "hi"
+    "title": "Full-Stack Web Developer",
+    "organization": "Responsible Computing Club Powered By Mozilla",
+    "description": "Built a full-stack analytics platform and official club website.",
+    "dates": {
+      "start": "Oct 2025",
+      "end": "Present"
+    }
   },
   {
-    "title": "SCE Venmo Automation",
-    "description": "Developed an API to verify member payments and automate the SCE club member payment process via Venmo.",
-    "longDescription": "Created a secure RESTful API to track members...",
-    "stack": ["Node.js", "Express", "MongoDB"],
-    "img": "hi"
+    "title": "S-STEM Program Mentor",
+    "organization": "SJSU Computer Engineering Department",
+    "description": "Mentored first-year engineering students, organized social events, and maintained academic success plans.",
+    "dates": {
+      "start": "Aug 2025",
+      "end": "Present"
+    }
   },
   {
-    "title": "Card Classifier",
-    "description": "Built an image classification neural network using PyTorch to categorize playing cards into 53 distinct classes.",
-    "longDescription": "Implemented custom training and evaluation loops using Python, NumPy, and Jupyter Notebooks, applying deep learning concepts including stochastic gradient descent and cross-entropy loss optimization. Visualized training and validation loss curves using Matplotlib to monitor model convergence, identify overfitting patterns, and optimize hyperparameters.",
-    "stack": ["PyTorch", "Matplotlib", "NumPy", "Python", "Jupyter"],
-    "img": "hi"
-  },
-  {
-    "title": "Mancala Game",
-    "description": "Developed a Mancala Game application with MVC architecture separating UI and logic.",
-    "longDescription": "Implemented the Strategy Design Pattern to support multiple board visuals and game configurations promoting flexibility and maintainability. Architectured MVC Observer logic into the game, streamlining the process from user input to game logic to UI, optimizing player turns and updates through reusable components.",
-    "stack": ["Java", "Java Swing", "AWT", "Eclipse", "Git/Github"],
-    "img": "hi"
-  },
-  {
-    "title": "AutoMail",
-    "description": "Developed a Chrome extension powered by the Gemini API to automatically generate and send context-aware email replies.",
-    "longDescription": "Implemented web scraping and DOM parsing to extract email content directly from Gmail’s web interface for real-time processing. Integrated Gmail and Google People APIs for authentication, message retrieval, and user data access to personalize email responses.",
-    "stack": ["React", "Node.js", "Next.js", "Google Gemini API", "Gmail API"],
-    "img": "hi"
+    "title": "Student Assistant",
+    "organization": "Aviation and Technology Department Assistant at SJSU",
+    "description": "Assisted over 100+ people with inquiries, and coordinated communication between students and faculty.",
+    "dates": {
+      "start": "Aug 2024",
+      "end": "Jan 2025"
+    }
   }
-  
 ]

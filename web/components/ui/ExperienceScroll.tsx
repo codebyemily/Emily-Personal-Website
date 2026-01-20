@@ -19,12 +19,11 @@ export function ExperienceScroll() {
           <React.Fragment key={index}>
             <div className="flex flex-row justify-between items-center">
               <p>{experience.title}</p>
-              <p className="text-border mt-1 justify-end">{experience.title}</p>
             </div>
-              <div className="text-sm font-medium">Organization</div>
+              <div className="text-sm font-medium text-primary">{experience.organization}</div>
 
               <p className="text-border mt-1">{experience.description}</p>
-            {/* add experience dates + organization*/}
+              <p className="text-border mt-1 text-sm justify-end">{experience.dates.start} - {experience.dates.end}</p>
             <Separator className="my-2" />
           </React.Fragment>
         ))}

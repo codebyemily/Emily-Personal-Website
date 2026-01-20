@@ -1,45 +1,50 @@
 [
   {
     "title": "StressBall",
-    "description": "Won \"Best MCP\" and \"Most Complex\" at Cal Hacks 12.0!",
-    "longDescription": "Built an AI-powered voice agent that autonomously calls businesses, navigates phone trees, and provides conversation summaries. Engineered serverless MCP backend on Cloudflare Workers with LiveKit Cloud for real-time voice processing and Telnyx integration for automated outbound calling to live phone numbers, handling concurrent voice sessions. Designed iMessage-based interface using Poke API, enabling users to text requests and receive AI-generated call transcripts stored in Cloudflare KV for persistent conversation history.",
+    "description": "Award-winning AI voice agent that autonomously places phone calls, navigates phone trees, and summarizes conversations.",
+    "longDescription": "Built an AI-powered voice agent that autonomously calls real businesses, navigates complex phone trees, and delivers structured conversation summaries. Engineered a scalable, serverless backend using Cloudflare Workers and Model Context Protocol, with LiveKit Cloud handling real-time voice streaming and Telnyx enabling automated outbound calls. Designed an iMessage-based interface using the Poke API, allowing users to text requests and receive AI-generated transcripts stored persistently in Cloudflare KV.",
     "stack": ["Cloudflare", "LiveKit Cloud", "Telnyx", "Model Context Protocol", "Poke", "JavaScript"],
-    "img": "hi"
+    "link": "https://devpost.com/software/stressball",
+    "image": "StressBall.png"
   },
   {
     "title": "RCC Site",
-    "description": "Developed a Chrome extension powered by the Gemini API to automatically generate and send context-aware email replies.",
-    "longDescription": "Implemented web scraping and DOM parsing to extract email content directly from Gmail’s web interface for real-time processing. Integrated Gmail and Google People APIs for authentication, message retrieval, and user data access to personalize email responses.",
-    "stack": ["React", "Node.js", "Next.js", "Google Gemini API", "Gmail API"],
-    "img": "hi"
+    "description": "Modern web platform built to support Responsible Computing Club outreach, content, and member engagement.",
+    "longDescription": "Developed a responsive website to centralize Responsible Computing Club resources, events, and announcements. Implemented reusable React components and optimized page performance using Next.js for fast navigation and SEO-friendly rendering. Collaborated closely with club leadership to ensure the site effectively communicated the organization’s mission while remaining easy to update and maintain.",
+    "stack": ["React", "Next.js", "Node.js"],
+    "link": "https://www.rccsjsu.com/",
+    "image": "RCC-Site.png"
   },
   {
     "title": "SCE Venmo Automation",
-    "description": "Developed an API to verify member payments and automate the SCE club member payment process via Venmo.",
-    "longDescription": "Created a secure RESTful API to track members...",
+    "description": "Automated payment verification system to streamline club membership dues through Venmo.",
+    "longDescription": "Designed and implemented a secure RESTful API to automate verification of Venmo payments for Software and Computer Engineering club members. Built backend logic to track payment status, associate transactions with members, and reduce manual administrative overhead. Ensured reliability and scalability by structuring clean API endpoints and persistent data storage for auditability.",
     "stack": ["Node.js", "Express", "MongoDB"],
-    "img": "hi"
+    "link": "https://github.com/SCE-Development/Clark/pull/1993",
+    "image": "SCE-Site.png"
   },
   {
     "title": "Card Classifier",
-    "description": "Built an image classification neural network using PyTorch to categorize playing cards into 53 distinct classes.",
-    "longDescription": "Implemented custom training and evaluation loops using Python, NumPy, and Jupyter Notebooks, applying deep learning concepts including stochastic gradient descent and cross-entropy loss optimization. Visualized training and validation loss curves using Matplotlib to monitor model convergence, identify overfitting patterns, and optimize hyperparameters.",
+    "description": "Deep learning model that classifies playing cards across 53 distinct categories.",
+    "longDescription": "Built and trained an image classification neural network using PyTorch to recognize playing cards across 53 classes. Implemented custom training and evaluation loops utilizing stochastic gradient descent and cross-entropy loss. Analyzed model performance by visualizing training and validation metrics with Matplotlib to detect overfitting and guide hyperparameter tuning.",
     "stack": ["PyTorch", "Matplotlib", "NumPy", "Python", "Jupyter"],
-    "img": "hi"
+    "link": "https://colab.research.google.com/drive/1GpDsvrsnziWMgegEAMlD03YH9X1UfVea?usp=sharing",
+    "image": "CardClassifier.png"
   },
   {
     "title": "Mancala Game",
-    "description": "Developed a Mancala Game application with MVC architecture separating UI and logic.",
-    "longDescription": "Implemented the Strategy Design Pattern to support multiple board visuals and game configurations promoting flexibility and maintainability. Architectured MVC Observer logic into the game, streamlining the process from user input to game logic to UI, optimizing player turns and updates through reusable components.",
-    "stack": ["Java", "Java Swing", "AWT", "Eclipse", "Git/Github"],
-    "img": "hi"
+    "description": "Object-oriented Mancala game application designed with scalable architecture patterns.",
+    "longDescription": "Developed a fully functional Mancala game using Java with a clean MVC architecture separating game logic from UI. Applied the Strategy Design Pattern to support multiple board layouts and rule variations, improving extensibility and maintainability. Integrated observer-based updates to efficiently synchronize game state changes with the user interface.",
+    "stack": ["Java", "Java Swing", "AWT", "Eclipse", "Git/GitHub"],
+    "link": "https://github.com/CodeOperated/CS151TeamProject",
+    "image": "Mancala.png"
   },
   {
     "title": "AutoMail",
-    "description": "Developed a Chrome extension powered by the Gemini API to automatically generate and send context-aware email replies.",
-    "longDescription": "Implemented web scraping and DOM parsing to extract email content directly from Gmail’s web interface for real-time processing. Integrated Gmail and Google People APIs for authentication, message retrieval, and user data access to personalize email responses.",
+    "description": "AI-powered Chrome extension that generates personalized, context-aware email replies.",
+    "longDescription": "Built a Chrome extension that automatically drafts intelligent email responses using the Gemini API. Implemented DOM parsing and web scraping to extract real-time email content directly from Gmail’s interface. Integrated Gmail and Google People APIs to authenticate users, retrieve messages, and personalize responses based on sender context and contact data.",
     "stack": ["React", "Node.js", "Next.js", "Google Gemini API", "Gmail API"],
-    "img": "hi"
+    "link": "https://devpost.com/software/automail-19zl2v",
+    "image": "Gmail.avif"
   }
-  
 ]

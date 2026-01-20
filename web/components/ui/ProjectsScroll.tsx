@@ -4,28 +4,28 @@ import * as React from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { Stack } from "@/components/ui/Stack";
-import projects from "@/app/data/projects.json";
 import { CurrentProject } from "@/components/ui/CurrentProject"
-
-
-export function changeProject(project: any) {
-  return <CurrentProject project={project}/>;
-
-}
+import Image from 'next/image'
+import Link from 'next/link'
+import projects from '@/app/data/projects.json';
+import { Project, CurrProjectType } from "@/app/types/projectTypes";
+import { useProject } from '@/app/contexts/ProjectContext';
 
 export function ProjectsScroll() {
-  const [selected, changeSelected] = useState(projects[0]);
-
+    const { currProject, setCurrProject } = useProject();
+    if (!currProject || currProject.stack === undefined) {
+        return <div>No projects</div>;
+    }
+    if (setCurrProject === undefined) {
+        return <div>No setCurrProject function</div>;
+    }
 
   return (
     <ScrollArea className="border rounded-md overflow-auto">
       <div className="p-4 space-y-4" >
         {projects.map((project) => (
           <React.Fragment key={project.title} >
-            <div className="hover:bg-accent group " onClick={() => {
-                changeSelected(project)}
-              }>
-
+            <div className="hover:bg-accent group " onClick={() => setCurrProject(project)}>
               <div className="flex flex-row justify-between">
                 <div className="text-sm font-medium">{project.title}</div>
                 <div className="flex gap-1 flex-wrap justify-end">
@@ -47,5 +47,6 @@ export function ProjectsScroll() {
         ))}
       </div>
     </ScrollArea>
+    
   );
 }

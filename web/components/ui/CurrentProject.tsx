@@ -1,31 +1,38 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
 import projects from '@/app/data/projects.json';
 import * as React from "react";
 import { Stack } from "@/components/ui/Stack";
 import Emily from "@/public/Emily.png"
+import GithubIcon from "@/components/icons/github-icon.svg"
+import { ProjectsScroll } from "@/components/ui/ProjectsScroll";
+import { Project, CurrProjectType } from "@/app/types/projectTypes";
+import { useProject } from '@/app/contexts/ProjectContext';
+import { useZoom } from '@/app/contexts/ZoomContext';
 
-export function CurrentProject( project: any ){
-    
+export function CurrentProject(){
+    const { currProject, setCurrProject } = useProject();
+    const { zoom, setZoom } = useZoom();
 
-    let currProject = project
-    if (!currProject || currProject === undefined || project.stack === undefined){
-        //display the first project
-        currProject = projects[0]
+    if (!currProject?.stack?.length) {
+        return <div>Loading projects...</div>;
     }
 
     return(
-      <div className="p-4 space-y-4 ">
-        <div className="flex flex-row items-center">
+      <div className=" space-y-4 flex flex-col justify-between">
+        <div className="flex flex-row justify-between">
             <h3>{currProject.title}</h3>
-            <Link href="/">Github Link</Link>
+            <Link href={currProject.link as string} target="_blank"><p className="underline text-primary">Link</p></Link>
         </div>
         <div className="mx-auto">
-            <Image src={Emily} alt="Picture of Emily Thach" width={100} height={100} className="float-right mr-2 mb-2 rounded-md aspect-square object-cover object-bottom border"/>
             <span className="text-sm">{currProject.longDescription}</span>
+        </div>
+        <div>
 
         </div>
-        
+
+        <div className="flex flex-col items-center gap-6">
         <div className="flex flex-wrap justify-content gap-1">
             {currProject.stack.map((stackItem: String, index: any) => (
                 <Stack key={index}
@@ -34,7 +41,10 @@ export function CurrentProject( project: any ){
                 </Stack>
             ))}
         </div>
-        
+        <div className="relative w-full h-50 rounded-md">
+            <Image src={`/images/${currProject.image}`} alt="Project Image" fill className="w-full object-contain cursor-pointer" onClick={() => {setZoom(currProject.image)}}  />
+        </div> 
+        </div>
       </div>
     );
     
