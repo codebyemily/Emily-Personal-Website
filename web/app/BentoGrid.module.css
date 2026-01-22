@@ -1,10 +1,10 @@
 .gridContainer {
   display: grid;
-  /* Use fractions instead of fixed px so columns scale */
   grid-template-columns: repeat(6, 1fr);
-  /* Auto rows scale based on content or container height */
-  grid-auto-rows: minmax(100px, auto);
-  gap: 10px;
+  grid-auto-rows: minmax(120px, auto);
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
 
   grid-template-areas:
     "box8 box8 box1 box1 box2 box2"
@@ -15,36 +15,62 @@
     "box9 box9 box9 box6 box5 box5";
 }
 
-/* Medium screens — up to 768px */
-@media (max-width: 768px) {
+/* Large screens — 1280px and up */
+@media (min-width: 1280px) {
   .gridContainer {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(80px, auto);
-    gap: 10px;
-    grid-template-areas:
-      "box8 box8 box1 box1"
-      "box8 box8 box1 box1"
-      "box8 box8 box4 box4"
-      "box9 box9 box3 box3"
-      "box2 box2 box5 box5"
-      "box6 box6 box5 box5";
+    gap: 16px;
+    grid-auto-rows: minmax(150px, auto);
   }
 }
 
-/* Small screens — up to 640px */
-@media (max-width: 640px) {
+/* Medium screens — 768px to 1279px (Tablet) */
+@media (max-width: 1279px) and (min-width: 768px) {
+  .gridContainer {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 12px;
+    grid-template-areas:
+      "box2 box2 box1 box1"
+      "box2 box2 box1 box1"
+      "box4 box4 box5 box5"
+      "box4 box4 box5 box5"
+      "box7 box7 box7 box7"
+      "box9 box9 box9 box9"
+      "box3 box3 box6 box6";
+  }
+}
+
+/* Small screens — 640px to 767px */
+@media (max-width: 767px) and (min-width: 640px) {
   .gridContainer {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(80px, auto);
+    grid-auto-rows: minmax(100px, auto);
     gap: 10px;
     grid-template-areas:
-      "box8 box8"
+      "box2 box2"
       "box1 box1"
       "box4 box4"
-      "box2 box2"
-      "box3 box3"
       "box5 box5"
+      "box7 box7"
       "box9 box9"
-      "box6 box6";
+      "box3 box6";
+  }
+}
+
+/* Extra small screens — below 640px (Phone) */
+@media (max-width: 639px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    gap: 10px;
+    grid-template-areas:
+      "box2"
+      "box1"
+      "box4"
+      "box5"
+      "box7"
+      "box9"
+      "box3"
+      "box6";
   }
 }

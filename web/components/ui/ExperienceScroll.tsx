@@ -12,19 +12,19 @@ const stack = ["React", "TailwindCSS"];
 
 export function ExperienceScroll() {
   return (
-    <ScrollArea className="h-150 overflow-auto border rounded-md ">
-      <div className="p-4">
-        <h4 className="mb-4 text-sm leading-none font-medium"></h4>
+    <ScrollArea className="h-full max-h-[400px] sm:max-h-[500px] overflow-auto border border-border rounded-md">
+      <div className="p-3 sm:p-4 space-y-3 sm:space-y-4">
         {experiences.map((experience, index) => (
           <React.Fragment key={index}>
-            <div className="flex flex-row justify-between items-center">
-              <p>{experience.title}</p>
+            <div className="space-y-1.5 sm:space-y-2">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                <p className="text-sm sm:text-base font-semibold text-foreground">{experience.title}</p>
+                <div className="text-xs sm:text-sm font-medium text-primary">{experience.organization}</div>
+              </div>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{experience.description}</p>
+              <p className="text-xs sm:text-sm text-muted-foreground">{experience.dates.start} - {experience.dates.end}</p>
             </div>
-              <div className="text-sm font-medium text-primary">{experience.organization}</div>
-
-              <p className="text-border mt-1">{experience.description}</p>
-              <p className="text-border mt-1 text-sm justify-end">{experience.dates.start} - {experience.dates.end}</p>
-            <Separator className="my-2" />
+            {index < experiences.length - 1 && <Separator className="my-2" />}
           </React.Fragment>
         ))}
       </div>

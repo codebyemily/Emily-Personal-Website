@@ -247,3 +247,45 @@
   font-weight: 700;
   font-style: italic;
 }
+
+/* Custom Scrollbar Styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: oklch(0.6918 0.0440 59.8448) transparent;
+}
+
+.dark * {
+  scrollbar-color: oklch(0.4448 0.0239 84.5498) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: oklch(0.6918 0.0440 59.8448);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.6657 0.1050 118.9078);
+  background-clip: padding-box;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background: oklch(0.4448 0.0239 84.5498);
+  background-clip: padding-box;
+}
+
+.dark *::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.6762 0.0567 132.4479);
+  background-clip: padding-box;
+}

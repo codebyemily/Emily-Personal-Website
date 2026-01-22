@@ -15,34 +15,54 @@ export function ContactForm() {
     const [charCount, setCharCount] = React.useState(0);
 
   return (
-    <div className="max-w-md mx-auto">
+    <div className="w-full max-w-md mx-auto space-y-4 sm:space-y-6">
 
-    <Card className="mb-5">
-      <CardHeader className="flex flex-col items-center">
-        <CardTitle className="text-xl courier-prime-regular text-center">Contact Me!</CardTitle>
+    <Card className="w-full">
+      <CardHeader className="flex flex-col items-center pb-4 sm:pb-6">
+        <CardTitle className="text-lg sm:text-xl md:text-2xl courier-prime-regular text-center">Contact Me!</CardTitle>
       </CardHeader> 
 
       <CardContent>
-        <form className="flex flex-col gap-4" method="POST" action="https://formspree.io/f/mgoovyjg">
-          <Input name="name" placeholder="Name" required className="border-border" />
-          <Input name="email" type="email" placeholder="Email" required className="border-border" />
-          <Textarea name="message" placeholder="Message" rows={5} required className="border-border overflow-auto resize-none w-50 h-30 whitespace-normal" maxLength={100} onChange={(e) => setCharCount(e.target.value.length)}/>
-          <div className="flex flex-row justify-between">
-            <p>{charCount}</p>
-            <p>Max Char:100</p>
-
+        <form className="flex flex-col gap-4 sm:gap-6" method="POST" action="https://formspree.io/f/mgoovyjg">
+          <Input 
+            name="name" 
+            placeholder="Name" 
+            required 
+            className="border-border text-sm sm:text-base" 
+          />
+          <Input 
+            name="email" 
+            type="email" 
+            placeholder="Email" 
+            required 
+            className="border-border text-sm sm:text-base" 
+          />
+          <div className="space-y-2">
+            <Textarea 
+              name="message" 
+              placeholder="Message" 
+              rows={5} 
+              required 
+              className="border-border overflow-auto resize-none whitespace-normal text-sm sm:text-base" 
+              maxLength={100} 
+              onChange={(e) => setCharCount(e.target.value.length)}
+            />
+            <div className="flex flex-row justify-between text-xs sm:text-sm text-muted-foreground">
+              <p>{charCount}/100</p>
+              <p>Max Characters: 100</p>
+            </div>
           </div>
-          <Button type="submit" className="w-full border">
-            <p className="courier-prime-regular">Send</p>
+          <Button type="submit" className="w-full border border-border">
+            <p className="courier-prime-regular text-sm sm:text-base">Send</p>
           </Button>
         </form>
       </CardContent>
-        
     </Card>
-    <Link href="/">
-        <Button type="submit" className="border">
-                <p className="courier-prime-regular">Back</p>
-        </Button>
+    
+    <Link href="/" className="block">
+      <Button type="button" className="w-full border border-border">
+        <p className="courier-prime-regular text-sm sm:text-base">Back</p>
+      </Button>
     </Link>
     
     </div>

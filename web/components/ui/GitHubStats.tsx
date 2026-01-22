@@ -121,27 +121,27 @@ export default function GitHubContributionChart() {
   }
 
   function getColorClass(count) {
-    if (count === 0) return 'bg-gray-100';
-    if (count < 3) return 'bg-green-200';
-    if (count < 6) return 'bg-green-400';
-    if (count < 9) return 'bg-green-600';
-    return 'bg-green-800';
+    if (count === 0) return 'bg-muted dark:bg-muted/30';
+    if (count < 3) return 'bg-green-200 dark:bg-green-900/40';
+    if (count < 6) return 'bg-green-400 dark:bg-green-800/50';
+    if (count < 9) return 'bg-green-600 dark:bg-green-700/60';
+    return 'bg-green-800 dark:bg-green-600/70';
   }
 
   if (loading) {
     return (
-      <div className="w-full max-w-4xl mx-auto ">
-        <div className="text-center">Loading GitHub contributions...</div>
+      <div className="w-full mx-auto">
+        <div className="text-center text-sm sm:text-base text-muted-foreground">Loading GitHub contributions...</div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="w-full max-w-4xl mx-auto p-8">
-        <div className="text-red-500 text-center">
+      <div className="w-full mx-auto p-4 sm:p-8">
+        <div className="text-destructive text-center text-sm sm:text-base">
           Error: {error}
-          <div className="text-sm mt-2 text-gray-600">
+          <div className="text-xs sm:text-sm mt-2 text-muted-foreground">
             Make sure to add your GitHub Personal Access Token
           </div>
         </div>
@@ -156,22 +156,27 @@ export default function GitHubContributionChart() {
   }
 
   return (
-      <Link href="https://github.com/codebyemily" target="_blank" rel="noopener noreferrer" className="flex flex-row">
-      <div className="w-full max-w-4xl p-2 rounded-lg ">
-        <div className="mb-6">
-          <p className="text-sm">
+    <Link 
+      href="https://github.com/codebyemily" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="flex flex-col w-full h-full hover:opacity-80 transition-opacity"
+    >
+      <div className="w-full p-2 sm:p-4 rounded-lg">
+        <div className="mb-3 sm:mb-4 md:mb-6">
+          <p className="text-xs sm:text-sm text-foreground">
             {totalCommits} contributions in the last year
           </p>
         </div>
 
-        <div className="overflow-x-auto">
-          <div className="flex justify-end gap-1">
+        <div className="overflow-x-auto -mx-2 px-2">
+          <div className="flex justify-end gap-0.5 sm:gap-1">
             {weeks.map((week, weekIdx) => (
-              <div key={weekIdx} className="flex flex-col gap-1">
+              <div key={weekIdx} className="flex flex-col gap-0.5 sm:gap-1">
                 {week.map((day, dayIdx) => (
                   <div
                     key={day.date}
-                    className={`w-3 h-3 rounded-sm ${getColorClass(day.contributionCount)}`}
+                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-sm ${getColorClass(day.contributionCount)} transition-colors`}
                     title={`${day.date}: ${day.contributionCount} contributions`}
                   />
                 ))}
@@ -180,21 +185,18 @@ export default function GitHubContributionChart() {
           </div>
         </div>
 
-        <div className="mt-6 flex items-center justify-between text-sm text-gray-600">
+        <div className="mt-3 sm:mt-4 md:mt-6 flex items-center justify-between text-xs sm:text-sm text-muted-foreground">
           <span>Less</span>
-          <div className="flex gap-1">
-            <div className="w-3 h-3 rounded-sm bg-gray-100" />
-            <div className="w-3 h-3 rounded-sm bg-green-200" />
-            <div className="w-3 h-3 rounded-sm bg-green-400" />
-            <div className="w-3 h-3 rounded-sm bg-green-600" />
-            <div className="w-3 h-3 rounded-sm bg-green-800" />
+          <div className="flex gap-0.5 sm:gap-1">
+            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-sm bg-muted dark:bg-muted/30" />
+            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-sm bg-green-200 dark:bg-green-900/40" />
+            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-sm bg-green-400 dark:bg-green-800/50" />
+            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-sm bg-green-600 dark:bg-green-700/60" />
+            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-sm bg-green-800 dark:bg-green-600/70" />
           </div>
           <span>More</span>
         </div>
-
-        
       </div>
     </Link>
-
   );
 }

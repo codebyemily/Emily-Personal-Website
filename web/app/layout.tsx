@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Courier_Prime } from "next/font/google";
 import { ProjectProvider } from "@/app/contexts/ProjectContext";
 import { ZoomProvider } from "@/app/contexts/ZoomContext";
+import { ThemeProvider } from "@/app/contexts/ThemeContext";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -35,13 +36,15 @@ export default function RootLayout({
     <html lang="en">
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${courierPrime.variable} antialiased overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${courierPrime.variable} antialiased`}
       >
-        <ZoomProvider>
-          <ProjectProvider> 
-            {children}
-          </ProjectProvider>
-        </ZoomProvider>
+        <ThemeProvider>
+          <ZoomProvider>
+            <ProjectProvider> 
+              {children}
+            </ProjectProvider>
+          </ZoomProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

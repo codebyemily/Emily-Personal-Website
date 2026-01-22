@@ -7,7 +7,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card"
       className={cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        "bg-card text-card-foreground flex flex-col gap-4 sm:gap-6 rounded-xl border border-border py-4 sm:py-6 shadow-sm",
         className
       )}
       {...props}
@@ -27,7 +27,7 @@ function CardGrid({ area, variant, className, ...props }: CardGridProps) {
       data-slot="card"
       style={area ? {gridArea: area}: undefined}
       className={cn(
-        `bg-card text-card-foreground flex flex-col items-stretch gap-6 rounded-xl border p-6 shadow-sm ${variant}`,
+        `bg-card text-card-foreground flex flex-col items-stretch gap-3 sm:gap-4 md:gap-6 rounded-xl border border-border p-3 sm:p-4 md:p-6 shadow-sm min-h-0 ${variant || ''}`,
         className
       )}
       {...props}
