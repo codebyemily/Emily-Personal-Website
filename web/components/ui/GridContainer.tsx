@@ -64,7 +64,7 @@ export default function GridContainer() {
               <h3>Experience</h3>
               <ExperienceScroll></ExperienceScroll></CardGrid>
             <Link href="/Form">
-              <CardGrid area="box6" variant="h-full bg-primary flex flex-col items-center text-center text-white hover:bg-chart-5"><h1>Contact Form</h1></CardGrid>
+              <CardGrid area="box6" variant="h-full w-full bg-primary flex flex-col items-center text-center text-white hover:bg-chart-5"><h1>Contact Form</h1></CardGrid>
             </Link>
             <CardGrid area="box8" className="flex flex-col gap-1 justify-between">
               <CurrentProject/ >
