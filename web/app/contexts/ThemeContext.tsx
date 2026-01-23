@@ -17,20 +17,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Set initial theme immediately to prevent flash
+    // Set initial theme based on system preference
     const root = document.documentElement;
     
-    // Check localStorage for saved theme preference
-    const savedTheme = localStorage.getItem('theme') as Theme | null;
-    let initialTheme: Theme;
-    
-    if (savedTheme) {
-      initialTheme = savedTheme;
-    } else {
-      // Check system preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      initialTheme = prefersDark ? 'dark' : 'light';
-    }
+    // Check system preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme: Theme = prefersDark ? 'dark' : 'light';
     
     // Apply theme immediately
     if (initialTheme === 'dark') {
@@ -52,7 +44,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     } else {
       root.classList.remove('dark');
     }
-    localStorage.setItem('theme', theme);
   }, [theme, mounted]);
 
   const toggleTheme = () => {

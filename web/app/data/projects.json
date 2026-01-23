@@ -2,25 +2,65 @@
   {
     "title": "StressBall",
     "description": "Award-winning AI voice agent that autonomously places phone calls, navigates phone trees, and summarizes conversations.",
-    "longDescription": "Built an AI-powered voice agent that autonomously calls real businesses, navigates complex phone trees, and delivers structured conversation summaries. Engineered a scalable, serverless backend using Cloudflare Workers and Model Context Protocol, with LiveKit Cloud handling real-time voice streaming and Telnyx enabling automated outbound calls. Designed an iMessage-based interface using the Poke API, allowing users to text requests and receive AI-generated transcripts stored persistently in Cloudflare KV.",
-    "stack": ["Cloudflare", "LiveKit Cloud", "Telnyx", "Model Context Protocol", "Poke", "JavaScript"],
+    "longDescription": "Built an AI-powered voice agent that autonomously calls real businesses, navigates complex phone trees, and delivers structured conversation summaries. Engineered a scalable, serverless backend using Cloudflare Workers and Model Context Protocol, with LiveKit Cloud handling real-time voice streaming and Telnyx enabling automated outbound calling to live phone numbers. Designed an iMessage-based interface using the Poke API, allowing users to text requests and receive AI-generated transcripts stored persistently in Cloudflare KV. Won 'Best MCP' and 'Most Complex' at Cal Hacks 12.0.",
+    "stack": ["Cloudflare Workers", "LiveKit Cloud", "Telnyx", "Model Context Protocol", "Poke", "JavaScript", "Cloudflare KV"],
     "link": "https://devpost.com/software/stressball",
     "image": "StressBall.png"
   },
   {
+    "title": "RCC Growth Analytics Platform",
+    "description": "Full-stack analytics platform centralizing engagement data for 300+ club members with predictive insights.",
+    "longDescription": "Built a comprehensive growth analytics platform to centralize club engagement data for 300+ Responsible Computing Club members across events, projects, and ambassadors. Implemented real-time tracking and data visualization using FastAPI for the backend, Supabase for database management and authentication, and Shadcn/ui for modern, accessible UI components. The platform resulted in an 80% increase in accurate growth predictions by providing leadership with actionable insights into member participation patterns.",
+    "stack": ["FastAPI", "Supabase", "Supabase Auth", "Shadcn/ui", "Python"],
+    "link": "https://rcc-dashboard-engagement-web.vercel.app/signin",
+    "image": "GrowthAnalytics.png"
+  },
+  {
     "title": "RCC Site",
     "description": "Modern web platform built to support Responsible Computing Club outreach, content, and member engagement.",
-    "longDescription": "Developed a responsive website to centralize Responsible Computing Club resources, events, and announcements. Implemented reusable React components and optimized page performance using Next.js for fast navigation and SEO-friendly rendering. Collaborated closely with club leadership to ensure the site effectively communicated the organization’s mission while remaining easy to update and maintain.",
-    "stack": ["React", "Next.js", "Node.js"],
+    "longDescription": "Developed the official Responsible Computing Club website featuring a responsive, modern interface to centralize club resources, events, and announcements. Implemented JWT authentication and role-based access control to secure user data, along with RESTful APIs for efficient user management and event tracking. Built with React and Next.js for optimal performance and SEO, utilizing Tailwind CSS for responsive design and Express.js with Supabase for robust backend infrastructure.",
+    "stack": ["React", "Next.js", "Tailwind CSS", "Express.js", "Supabase", "JWT"],
     "link": "https://www.rccsjsu.com/",
     "image": "RCC-Site.png"
   },
   {
+    "title": "EPA Compliance Application",
+    "description": "Full-stack application providing farmers easy access to environmental guidelines and regulatory updates.",
+    "longDescription": "Created a full-stack EPA compliance application in collaboration with ESA to help farmers navigate environmental regulations. Utilized Redux for predictable state management across the application and GraphQL for efficient, flexible data querying. Implemented MongoDB aggregation pipelines to process and present complex regulatory data in an accessible format, with Winston logging integrated for real-time monitoring of regulatory updates and system health.",
+    "stack": ["Redux", "GraphQL", "MongoDB", "Winston", "React", "Node.js"],
+    "link": "/",
+    "image": "InProgress.png"
+  },
+  {
+    "title": "SCE CI/CD Pipeline",
+    "description": "Automated deployment infrastructure reducing deployment time by 65% through GitHub Actions.",
+    "longDescription": "Implemented comprehensive GitHub Actions CI/CD workflows to enforce branch protection and merge gating for pull requests. Streamlined code quality checks by automating linting, testing, and security scanning, preventing unvalidated code from entering production branches. The automated build and deployment pipeline reduced deployment time by 65%, enabling the team to ship features faster while maintaining high code quality standards.",
+    "stack": ["GitHub Actions", "Docker", "Node.js", "CI/CD"],
+    "link": "https://github.com/SCE-Development/sce-cicd",
+    "image": "SCE-Site.png"
+  },
+  {
     "title": "SCE Venmo Automation",
-    "description": "Automated payment verification system to streamline club membership dues through Venmo.",
-    "longDescription": "Designed and implemented a secure RESTful API to automate verification of Venmo payments for Software and Computer Engineering club members. Built backend logic to track payment status, associate transactions with members, and reduce manual administrative overhead. Ensured reliability and scalability by structuring clean API endpoints and persistent data storage for auditability.",
-    "stack": ["Node.js", "Express", "MongoDB"],
+    "description": "Automated payment verification system streamlining membership dues for 200+ applicants.",
+    "longDescription": "Designed and implemented a secure automated payment processing system to streamline membership payments for the Software and Computer Engineering Society. Built with Node.js, MongoDB/Mongoose, and Google Apps Script to parse and verify Venmo transactions for 200+ club applicants. Created robust data validation and matching algorithms to automatically associate payments with member profiles, dramatically reducing manual administrative overhead and payment processing errors.",
+    "stack": ["Node.js", "MongoDB", "Mongoose", "Apps Script"],
     "link": "https://github.com/SCE-Development/Clark/pull/1993",
+    "image": "SCE-Site.png"
+  },
+  {
+    "title": "SCE Discord Bot",
+    "description": "Feature-rich Discord bot for server management with integrated music streaming capabilities.",
+    "longDescription": "Created a comprehensive Discord bot to manage the Software and Computer Engineering Society's server, handling member verification, role assignment, and automated announcements. Developed music streaming features using the ytdl-core Node.js library for high-quality audio playback. Containerized the application with Docker for consistent deployment, utilized Discord.js for seamless Discord API integration, and implemented Prometheus for real-time monitoring and performance metrics.",
+    "stack": ["Node.js", "Discord.js", "Docker", "ytdl-core", "Prometheus"],
+    "link": "https://github.com/SCE-Development/sarah",
+    "image": "Discord-Bot.png"
+  },
+  {
+    "title": "ISBN Search Tool",
+    "description": "Class material search tool with optimized performance and comprehensive testing.",
+    "longDescription": "Implemented an ISBN search tool for finding class materials using React.js with a clean, modern interface styled with TailwindCSS. Integrated the OpenLibrary API using JavaScript fetch to retrieve comprehensive book information including titles, authors, publication details, and availability. Wrote extensive unit tests with Mocha and Chai to validate JSON parsing logic and ensure robust error handling. Deployed on the SCE website using Nginx and Docker, serving minified JavaScript files to optimize load times and performance.",
+    "stack": ["React.js", "Docker", "TailwindCSS", "Nginx", "Mocha", "Chai"],
+    "link": "/",
     "image": "SCE-Site.png"
   },
   {
@@ -42,7 +82,7 @@
   {
     "title": "AutoMail",
     "description": "AI-powered Chrome extension that generates personalized, context-aware email replies.",
-    "longDescription": "Built a Chrome extension that automatically drafts intelligent email responses using the Gemini API. Implemented DOM parsing and web scraping to extract real-time email content directly from Gmail’s interface. Integrated Gmail and Google People APIs to authenticate users, retrieve messages, and personalize responses based on sender context and contact data.",
+    "longDescription": "Built a Chrome extension that automatically drafts intelligent email responses using the Gemini API. Implemented DOM parsing and web scraping to extract real-time email content directly from Gmail's interface. Integrated Gmail and Google People APIs to authenticate users, retrieve messages, and personalize responses based on sender context and contact data.",
     "stack": ["React", "Node.js", "Next.js", "Google Gemini API", "Gmail API"],
     "link": "https://devpost.com/software/automail-19zl2v",
     "image": "Gmail.avif"

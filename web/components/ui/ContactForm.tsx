@@ -15,9 +15,9 @@ export function ContactForm() {
     const [charCount, setCharCount] = React.useState(0);
 
   return (
-    <div className="w-full max-w-md mx-auto space-y-4 sm:space-y-6">
+    <div className=" max-w-md mx-auto space-y-4 sm:space-6">
 
-    <Card className="w-full">
+    <Card className="">
       <CardHeader className="flex flex-col items-center pb-4 sm:pb-6">
         <CardTitle className="text-lg sm:text-xl md:text-2xl courier-prime-regular text-center">Contact Me!</CardTitle>
       </CardHeader> 
@@ -43,7 +43,7 @@ export function ContactForm() {
               placeholder="Message" 
               rows={5} 
               required 
-              className="border-border overflow-auto resize-none whitespace-normal text-sm sm:text-base" 
+              className="border-border overflow-auto resize-none whitespace-normal text-sm h-50 sm:text-base" 
               maxLength={100} 
               onChange={(e) => setCharCount(e.target.value.length)}
             />
@@ -60,8 +60,8 @@ export function ContactForm() {
     </Card>
     
     <Link href="/" className="block">
-      <Button type="button" className="w-full border border-border">
-        <p className="courier-prime-regular text-sm sm:text-base">Back</p>
+      <Button type="button" className="border border-border">
+        <p className="courier-prime-regular text-sm sm:text-base">Go Back</p>
       </Button>
     </Link>
     

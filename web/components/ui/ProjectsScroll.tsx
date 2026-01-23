@@ -4,12 +4,10 @@ import * as React from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { Stack } from "@/components/ui/Stack";
-import { CurrentProject } from "@/components/ui/CurrentProject"
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
 import projects from '@/app/data/projects.json';
-import { Project, CurrProjectType } from "@/app/types/projectTypes";
 import { useProject } from '@/app/contexts/ProjectContext';
 import { useZoom } from '@/app/contexts/ZoomContext';
 

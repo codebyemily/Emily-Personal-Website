@@ -1,15 +1,7 @@
 "use client";
 import Image from "next/image";
-import { Button } from "@/components/ui/button"
-import { ExperienceScroll } from "@/components/ui/ExperienceScroll";
 import { ProjectsScroll } from "@/components/ui/ProjectsScroll";
-import { Card, CardGrid } from "@/components/ui/card"
-import styles from "./BentoGrid.module.css";
-import { Projects } from "@/components/ui/ProjectsList";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import  Link  from 'next/link'
-import Emily from "@/public/Emily.png"
-import { CurrentProject } from "@/components/ui/CurrentProject"
 import GridContainer from "@/components/ui/GridContainer";
 import { useZoom } from "@/app/contexts/ZoomContext";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
@@ -23,7 +15,7 @@ export function WebPage() {
         {/* Zoomed in image display */}
         {zoom ? (
           <div 
-            className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-sm cursor-pointer"
+            className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm cursor-pointer"
             onClick={() => setZoom(null)}
           >
             <div className="relative w-full h-full max-w-7xl max-h-[90vh] m-4 md:m-8 lg:m-16">
@@ -31,7 +23,7 @@ export function WebPage() {
                 src={`/images/${zoom}`} 
                 alt="Project image" 
                 fill 
-                className="rounded-xl border border-border object-contain p-4 md:p-8 lg:p-16"
+                className="rounded-xl object-contain p-4 md:p-8 lg:p-16"
                 priority
               />
             </div>

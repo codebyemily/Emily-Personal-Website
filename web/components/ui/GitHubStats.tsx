@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function GitHubContributionChart() {
-  const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
   const [contributions, setContributions] = useState([]);
   const [totalCommits, setTotalCommits] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -28,60 +27,24 @@ export default function GitHubContributionChart() {
       return;
     }
 
-    if (!GITHUB_TOKEN || GITHUB_TOKEN === 'YOUR_GITHUB_TOKEN_HERE') {
-      setError('Please add your GitHub token');
-      setLoading(false);
-      return;
-    }
-
     try {
-      const query = `
-        query($username: String!) {
-          user(login: $username) {
-            contributionsCollection {
-              contributionCalendar {
-                totalContributions
-                weeks {
-                  contributionDays {
-                    date
-                    contributionCount
-                    color
-                  }
-                }
-              }
-            }
-          }
-        }
-      `;
-
-      const response = await fetch('https://api.github.com/graphql', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${GITHUB_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query,
-          variables: { username }
-        }),
+      const response = await fetch('/api/github-contributions', {
+        method: 'GET',
       });
 
       const data = await response.json();
       
-      if (data.errors) {
-        throw new Error(data.errors[0].message);
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to fetch GitHub contributions');
       }
 
-      const calendar = data.data.user.contributionsCollection.contributionCalendar;
-      const allDays = calendar.weeks.flatMap(week => week.contributionDays);
-      
-      setContributions(allDays);
-      setTotalCommits(calendar.totalContributions);
+      setContributions(data.contributions);
+      setTotalCommits(data.totalCommits);
       
       // Cache the data
       setCachedData(CACHE_KEY, {
-        contributions: allDays,
-        totalCommits: calendar.totalContributions
+        contributions: data.contributions,
+        totalCommits: data.totalCommits
       }, CACHE_TTL);
       
     } catch (err) {
@@ -160,23 +123,23 @@ export default function GitHubContributionChart() {
       href="https://github.com/codebyemily" 
       target="_blank" 
       rel="noopener noreferrer" 
-      className="flex flex-col w-full h-full hover:opacity-80 transition-opacity"
+      className=" flex flex-col hover:opacity-80 transition-opacity "
     >
-      <div className="w-full p-2 sm:p-4 rounded-lg">
+      <div className=" p-2 sm:p-4 rounded-lg flex flex-col">
         <div className="mb-3 sm:mb-4 md:mb-6">
           <p className="text-xs sm:text-sm text-foreground">
             {totalCommits} contributions in the last year
           </p>
         </div>
 
-        <div className="overflow-x-auto -mx-2 px-2">
-          <div className="flex justify-end gap-0.5 sm:gap-1">
+        <div className=" min-w-0 overflow-x-auto flex-1">
+          <div className="flex justify-end gap-0.5 md:gap-1">
             {weeks.map((week, weekIdx) => (
-              <div key={weekIdx} className="flex flex-col gap-0.5 sm:gap-1">
+              <div key={weekIdx} className="flex flex-col gap-0.5">
                 {week.map((day, dayIdx) => (
                   <div
                     key={day.date}
-                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-sm ${getColorClass(day.contributionCount)} transition-colors`}
+                    className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 rounded-sm ${getColorClass(day.contributionCount)} transition-colors`}
                     title={`${day.date}: ${day.contributionCount} contributions`}
                   />
                 ))}
@@ -187,12 +150,12 @@ export default function GitHubContributionChart() {
 
         <div className="mt-3 sm:mt-4 md:mt-6 flex items-center justify-between text-xs sm:text-sm text-muted-foreground">
           <span>Less</span>
-          <div className="flex gap-0.5 sm:gap-1">
-            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-sm bg-muted dark:bg-muted/30" />
-            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-sm bg-green-200 dark:bg-green-900/40" />
-            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-sm bg-green-400 dark:bg-green-800/50" />
-            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-sm bg-green-600 dark:bg-green-700/60" />
-            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-sm bg-green-800 dark:bg-green-600/70" />
+          <div className="flex gap-0.5 md:gap-1">
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 rounded-sm bg-muted dark:bg-muted/30" />
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 rounded-sm bg-green-200 dark:bg-green-900/40" />
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 rounded-sm bg-green-400 dark:bg-green-800/50" />
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 rounded-sm bg-green-600 dark:bg-green-700/60" />
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 rounded-sm bg-green-800 dark:bg-green-600/70" />
           </div>
           <span>More</span>
         </div>

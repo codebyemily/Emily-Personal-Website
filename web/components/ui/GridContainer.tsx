@@ -1,21 +1,13 @@
 "use client"
 import { MapPin } from "lucide-react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button"
 import { ExperienceScroll } from "@/components/ui/ExperienceScroll";
 import { ProjectsScroll } from "@/components/ui/ProjectsScroll";
-import { Card, CardGrid } from "@/components/ui/card"
+import { CardGrid } from "@/components/ui/card"
 import styles from "@/app/BentoGrid.module.css";
-import { Projects } from "@/components/ui/ProjectsList";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import  Link  from 'next/link'
 import Emily from "@/public/Emily.png"
 import { CurrentProject } from "@/components/ui/CurrentProject"
-import { useState } from 'react'
-import * as React from "react";
-import { Project, CurrProjectType } from "@/app/types/projectTypes";
-import projects from "@/app/data/projects.json";
-import { useProject } from '@/app/contexts/ProjectContext';
 import GitHubStats from '@/components/ui/GitHubStats';
 import { IconCard } from '@/components/ui/IconCard';
 import { ThemeToggle } from '@/components/ui/ThemeToggle'; 
@@ -81,7 +73,7 @@ export default function GridContainer() {
               </div>
             </CardGrid>
             
-            <CardGrid area="box5" className="gap-3 sm:gap-4">
+            <CardGrid area="box5" className="h-full">
               <h3 className="text-base sm:text-lg md:text-xl">Experience</h3>
               <ExperienceScroll />
             </CardGrid>
@@ -95,7 +87,6 @@ export default function GridContainer() {
               <div className="flex flex-col gap-4 p-4 border border-border rounded-xl bg-card">
                 <div className="flex items-center justify-between">
                   <h2 className="text-base font-semibold">Projects</h2>
-                  <ThemeToggle />
                 </div>
                 <div className="max-h-96 overflow-auto">
                   <ProjectsScroll />
@@ -109,16 +100,15 @@ export default function GridContainer() {
             >
               <Link href="/Form" className="w-full h-full md:flex md:items-center md:justify-center">
                 <button className="bg-primary py-3 px-6 rounded-lg md:px-6 py-3 hover:bg-primary/90 text-white font-semibold rounded-lg transition-colors md:bg-transparent md:hover:bg-transparent md:text-primary-foreground md:rounded-none md:p-0">
-                  <span className="text-base sm:text-lg md:text-xl lg:text-2xl">Contact Form</span>
+                  <span className="text-base sm:text-lg md:text-xl lg:text-2xl underline">Contact Form</span>
                 </button>
               </Link>
             </CardGrid>
-            
-            <CardGrid area="box8" className="hidden md:flex flex-col gap-2 sm:gap-3 md:gap-4 justify-between min-h-0">
+            <CardGrid area="box8" className="hidden md:flex flex-col gap-2">
               <CurrentProject />
             </CardGrid>
 
-            <CardGrid area="box9" className="gap-2 sm:gap-3 md:gap-4">
+            <CardGrid area="box9" className="hidden md:flex gap-3">
               <GitHubStats />
             </CardGrid>
             </div>

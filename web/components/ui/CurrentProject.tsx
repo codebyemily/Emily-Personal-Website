@@ -7,8 +7,8 @@ import { useZoom } from '@/app/contexts/ZoomContext';
 import { ExternalLink } from 'lucide-react';
 
 export function CurrentProject(){
-    const { currProject, setCurrProject } = useProject();
-    const { zoom, setZoom } = useZoom();
+    const { currProject } = useProject();
+    const { setZoom } = useZoom();
 
     if (!currProject?.stack?.length) {
         return <div>Loading projects...</div>;
@@ -23,7 +23,6 @@ export function CurrentProject(){
               target="_blank"
               className="inline-flex underline text-primary hover:text-primary/80 transition-colors text-xs sm:text-sm whitespace-nowrap"
             >
-              View Project
               <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
             </Link>
         </div>
@@ -33,16 +32,16 @@ export function CurrentProject(){
 
         <div className="flex flex-col items-center gap-3 sm:gap-4 md:gap-6">
           <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2">
-            {currProject.stack.map((stackItem: String, index: any) => (
+            {currProject.stack.map((stackItem: string, index: any) => (
               <Stack 
                 key={index}
-                className="text-[10px] sm:text-xs px-2 py-1 rounded bg-muted text-muted-foreground"
+                className="text-[10px] sm:text-xs px-2 py-1 rounded "
               >
                 {stackItem}
               </Stack>
             ))}
           </div>
-          <div className="relative w-full aspect-video rounded-md  overflow-hidden bg-muted/20">
+          <div className="relative w-full aspect-video rounded-md  overflow-hidden">
             <Image 
               src={`/images/${currProject.image}`} 
               alt="Project Image" 
