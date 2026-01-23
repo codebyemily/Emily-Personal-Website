@@ -20,7 +20,7 @@ export const useZoom = () => {
 
 // Provider
 export const ZoomProvider = ({ children }: { children: ReactNode }) => {
-  const [zoom, setZoom] = useState(null);
+  const [zoom, setZoom] = useState<string | null | undefined>(null);
   
   return (
     <ZoomContext.Provider value={{ zoom, setZoom }}>
