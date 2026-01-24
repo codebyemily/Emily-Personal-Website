@@ -47,7 +47,7 @@ export function WebPage() {
           <div className="flex-1 flex flex-col h-screen min-w-0">
             {/* Grid Container */}
             <div className="flex-1 min-h-0 overflow-x-hidden p-3 sm:p-4 md:p-6">
-              <ScrollArea className="h-full w-full rounded-xl border border-border">
+              <ScrollArea className="h-full w-full rounded-xl border">
                 <GridContainer />
               </ScrollArea>
             </div>
