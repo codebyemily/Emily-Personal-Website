@@ -8,8 +8,8 @@ import * as React from "react";
 
 export function IconCard(){
     return (
-        <div className="flex flex-col w-full">
-            <div className="flex flex-col gap-2 sm:gap-3 justify-center items-center">
+        <div className="flex flex-col w-full justify-center items-center">
+            <div className="flex flex-col gap-2 sm:gap-3">
                 <Link 
                   href="https://www.linkedin.com/in/emilythachh" 
                   target="_blank" 

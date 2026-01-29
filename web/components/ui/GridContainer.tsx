@@ -67,9 +67,9 @@ export default function GridContainer() {
               <div>
                 <h3 className="text-base sm:text-lg md:text-xl mb-2 sm:mb-3">Organizations</h3>
                 <ul className="list-disc list-inside space-y-1 text-sm sm:text-base">
-                  <li>Software and Computer Engineering Society</li>
+                  <li>Software and Computer Engineering Society Officer</li>
                   <li>Associated Computing Machinery Club</li>
-                  <li>Responsible Computing Club</li>
+                  <li>Responsible Computing Club Web Developer Ambassador</li>
                   <li>Omi Ambassador</li>
                 </ul>
               </div>
