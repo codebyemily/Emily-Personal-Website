@@ -58,7 +58,7 @@ export default function GridContainer() {
                 <h3 className="text-base sm:text-lg md:text-xl mb-2 sm:mb-3">Education</h3>
                 <ul className="list-disc list-inside space-y-1 text-sm sm:text-base">
                   <li>San Jose State University</li> 
-                  <li>B.S. Software Engineering, Fall 2027</li>
+                  <li>B.S. Software Engineering, 2027</li>
                   <li>GPA: 4.00 / 4.00</li>
                   <li>President's Scholar</li>
                 </ul>
