@@ -10,7 +10,7 @@ import Emily from "@/public/Emily.png"
 import { CurrentProject } from "@/components/ui/CurrentProject"
 import GitHubStats from '@/components/ui/GitHubStats';
 import { IconCard } from '@/components/ui/IconCard';
-import OmiDevices from '@/public/images/OmiDevices.jpg'
+import { HighlightsCarousel } from '@/components/ui/HighlightsCarousel'
 
 //'@/app/public/images/OmiDevices';
 
@@ -112,13 +112,7 @@ export default function GridContainer() {
 
             <CardGrid area="box9" className="hidden md:flex gap-3">
               <h3>Highlights</h3>
-              <div className="flex flex-col items-center gap-4">
-                <p>I recently became an Omi ambassador! I will be hosting a series of events at RCC and giving away these Omi devices!</p>
-                <div className="relative w-full max-w-100 h-64">
-                  <Image src={OmiDevices} fill alt="Highlight Image" className="rounded-xl border"/>
-                </div>
-              </div>
-              
+              <HighlightsCarousel />
             </CardGrid>
             </div>
         </div>  

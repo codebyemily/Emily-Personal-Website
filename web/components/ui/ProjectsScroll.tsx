@@ -45,8 +45,8 @@ export function ProjectsScroll() {
             return (
             <React.Fragment key={project.title}>
                 {/* Desktop view - click to select project */}
-                <div 
-                  className="hidden md:block hover:bg-accent/50 group cursor-pointer transition-colors rounded-md p-2 -m-2" 
+                <div
+                  className="hidden md:block hover:bg-accent/50 group cursor-pointer transition-colors rounded-md p-2"
                   onClick={() => setCurrProject(project)}
                 >
                   <div className="flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-0">
